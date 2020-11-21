@@ -8,7 +8,13 @@ target 'GiphySearch' do
   # Pods for GiphySearch
   pod 'RxSwift', '6.0.0-rc.1'
   pod 'RxCocoa', '6.0.0-rc.1'
+
+  # Requests
   pod 'Alamofire', '5.4.0'
+
+  # Animated gifs
+  pod 'FLAnimatedImage', '1.0.12'
+  pod 'SDWebImageFLPlugin'
 
   target 'GiphySearchTests' do
     inherit! :search_paths
