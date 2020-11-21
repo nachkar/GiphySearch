@@ -16,7 +16,7 @@ struct GiphyResponse: JSONCompatible {
         guard let json = json else {return nil}
         pagination = Pagination(json: json["pagination"] as? [String: Any]) ?? Pagination()
         meta = Meta(json: json["meta"] as? [String: Any]) ?? Meta()
-        data = (json["data"] as? [[String: Any]] ?? []).flatMap {DataItem(json: $0)}
+        data = (json["data"] as? [[String: Any]] ?? []).compactMap {DataItem(json: $0)}
     }
 
     init() {
