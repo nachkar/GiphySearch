@@ -1,12 +1,6 @@
 PODS:
   - Alamofire (5.4.0)
   - FLAnimatedImage (1.0.12)
-  - RxCocoa (6.0.0-rc.1):
-    - RxRelay (= 6.0.0-rc.1)
-    - RxSwift (= 6.0.0-rc.1)
-  - RxRelay (6.0.0-rc.1):
-    - RxSwift (= 6.0.0-rc.1)
-  - RxSwift (6.0.0-rc.1)
   - SDWebImage/Core (5.9.5)
   - SDWebImageFLPlugin (0.4.0):
     - FLAnimatedImage (>= 1.0.11)
@@ -15,29 +9,21 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 5.4.0)
   - FLAnimatedImage (= 1.0.12)
-  - RxCocoa (= 6.0.0-rc.1)
-  - RxSwift (= 6.0.0-rc.1)
   - SDWebImageFLPlugin
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - FLAnimatedImage
-    - RxCocoa
-    - RxRelay
-    - RxSwift
     - SDWebImage
     - SDWebImageFLPlugin
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  RxCocoa: a28d75145c07b7547b85faf1e1ad8b25af88a752
-  RxRelay: 56abad6d32f73567858506d08735fdb341935b9a
-  RxSwift: dae1a32c48148897494b9e2a6b00a68b40694236
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
 
-PODFILE CHECKSUM: 1e9f97aaf752883ce9699f16b1161e434b4d73ce
+PODFILE CHECKSUM: c513834b0511ce3cfed6f9a6f777e3c74bacf064
 
 COCOAPODS: 1.9.3

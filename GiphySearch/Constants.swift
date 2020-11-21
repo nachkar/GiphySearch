@@ -10,5 +10,5 @@ import Foundation
 public enum ServerAddress {
     static let BaseUrl = "https://api.giphy.com"
     static let SearchApi = "/v1/gifs/search?api_key=w9i1RABmCTFmeHetNMzCxiuMmjJqy5Cy"
-    static let TrendingApi = "/v1/gifs/trending?"
+    static let TrendingApi = "/v1/gifs/trending?api_key=w9i1RABmCTFmeHetNMzCxiuMmjJqy5Cy"
 }
