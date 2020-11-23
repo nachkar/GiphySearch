@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension FavoritesImages {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<FavoritesImages> {
@@ -18,9 +17,11 @@ extension FavoritesImages {
 
     @NSManaged public var imageId: String?
     @NSManaged public var imageUrl: String?
-
+    @NSManaged public var imageRating: String?
+    @NSManaged public var imageSource: String?
+    @NSManaged public var imageLbl: String?
 }
 
-extension FavoritesImages : Identifiable {
+extension FavoritesImages: Identifiable {
 
 }

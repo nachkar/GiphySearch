@@ -2,9 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FavoritesImages" representedClassName="FavoritesImages" syncable="YES">
         <attribute name="imageId" optional="YES" attributeType="String"/>
+        <attribute name="imageLbl" optional="YES" attributeType="String"/>
+        <attribute name="imageRating" optional="YES" attributeType="String"/>
+        <attribute name="imageSource" optional="YES" attributeType="String"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="FavoritesImages" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="FavoritesImages" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

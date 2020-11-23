@@ -10,7 +10,7 @@ import UIKit
 class ImagesViewController: BaseViewController {
 
     let viewModel = ImagesViewModel()
-    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
@@ -22,7 +22,7 @@ class ImagesViewController: BaseViewController {
         setupViewModel()
         setupTableView()
     }
-    
+
     func setupTableView() {
         self.tableView.tableFooterView = UIView()
     }
@@ -48,7 +48,7 @@ class ImagesViewController: BaseViewController {
 
         definesPresentationContext = true
     }
-    
+
     func setupViewModel() {
         viewModel.didFinishLoading = { [weak self] in
             self?.tableView.reloadData()
@@ -62,10 +62,10 @@ class ImagesViewController: BaseViewController {
             self?.activityIndicator.isHidden = !isLoading
             isLoading ? self?.activityIndicator.startAnimating() : self?.activityIndicator.stopAnimating()
         }
-        
+
         viewModel.initialise()
     }
-    
+
     /*
     // MARK: - Navigation
 

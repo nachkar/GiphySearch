@@ -47,36 +47,35 @@ class ImagesViewModel: NSObject {
         didSet { self.showSuccessClosure?() }
     }
 
-    var showSuccessClosure: (() -> Void)?
-    var didFinishLoading: (() -> Void)?
-    var updateLoadingStatus: ((_ isLoading: Bool) -> Void)?
-    var showAlertClosure: (() -> Void)?
-    var getLocation: ((_ name: String, _ address: String) -> Void)?
-
     var itemCount: Int {
         get {  return items.count }
     }
 
-    var items: [ImagesCellViewModel] = [] {
-        didSet { self.didFinishLoading?() }
+    var items: [ImagesCellViewModelItem] = [] {
+        didSet { self.finishedLoading = true }
     }
 
-    func createCellViewModel(item: DataItem) -> ImagesCellViewModel {
-        return ImagesCellViewModel(imageId: item.id, imageUrl: item.images.fixed_width_small.url, imageTitle: item.title, imageRating: item.rating,imageSource: item.source_tld ,isFavorite: false)
+    func createCellViewModel(item: DataItem) -> ImagesCellViewModelItem {
+        return ImagesCellViewModelItem(imageId: item.id, imageUrl: item.images.fixed_width_small.url, imageTitle: item.title, imageRating: item.rating, imageSource: item.source_tld, isFavorite: false)
         }
 
     func processFetchedData(data: [DataItem]) {
-        var vms = [ImagesCellViewModel]()
-        
+        var vms = [ImagesCellViewModelItem]()
+
         for image in data {
             vms.append(createCellViewModel(item: image))
         }
 
         self.items = vms
     }
+
+    var showSuccessClosure: (() -> Void)?
+    var didFinishLoading: (() -> Void)?
+    var updateLoadingStatus: ((_ isLoading: Bool) -> Void)?
+    var showAlertClosure: (() -> Void)?
 }
 
-struct ImagesCellViewModel {
+struct ImagesCellViewModelItem {
     var imageId: String
     var imageUrl: String
     var imageTitle: String

@@ -8,7 +8,7 @@
 import UIKit
 
 extension ImagesViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }

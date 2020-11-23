@@ -12,3 +12,15 @@ public enum ServerAddress {
     static let SearchApi = "/v1/gifs/search?api_key=w9i1RABmCTFmeHetNMzCxiuMmjJqy5Cy"
     static let TrendingApi = "/v1/gifs/trending?api_key=w9i1RABmCTFmeHetNMzCxiuMmjJqy5Cy"
 }
+
+public enum FetchedResultUpdate {
+    case willBegin
+    case didFinish
+}
+
+public enum FetchedResultsChangeType: UInt {
+    case insert = 1
+    case delete = 2
+    case move = 3
+    case update = 4
+}

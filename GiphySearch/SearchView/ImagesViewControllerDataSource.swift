@@ -24,6 +24,6 @@ extension ImagesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.itemCount 
+        return viewModel.itemCount
     }
 }

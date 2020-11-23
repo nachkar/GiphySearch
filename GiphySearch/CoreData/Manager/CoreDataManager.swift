@@ -13,4 +13,10 @@ private let shared = CoreDataManager()
     @objc class var sharedManager: CoreDataManager {
         return shared
     }
+
+    func removeImage(imageId: String) {
+        self.executeBlock(block: { context in
+            FavoritesImages.removeImage(imageId, in: context)
+        })
+    }
 }

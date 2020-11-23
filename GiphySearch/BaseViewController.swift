@@ -15,12 +15,12 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupNavigation()
     }
-    
+
     func setupNavigation() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
     }
-    
+
     /*
     // MARK: - Navigation
 

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5A6BBB470DED29A2226FE1E6 /* Pods_GiphySearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063350893CD25AFD1F01C570 /* Pods_GiphySearch.framework */; };
+		629DF068256BB7920008E580 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629DF067256BB7920008E580 /* FavoritesViewController.swift */; };
+		629DF077256BB7A40008E580 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629DF076256BB7A40008E580 /* FavoritesCollectionViewCell.swift */; };
+		629DF07C256BB8A10008E580 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629DF07B256BB8A10008E580 /* FavoritesViewModel.swift */; };
+		629DF081256BB8AB0008E580 /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629DF080256BB8AB0008E580 /* FavoritesModel.swift */; };
 		62C6521525691DB600A3D54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C6521425691DB600A3D54A /* AppDelegate.swift */; };
 		62C6521725691DB600A3D54A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C6521625691DB600A3D54A /* SceneDelegate.swift */; };
 		62C6521C25691DB600A3D54A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C6521A25691DB600A3D54A /* Main.storyboard */; };
@@ -92,6 +96,10 @@
 		063350893CD25AFD1F01C570 /* Pods_GiphySearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E24D5DF273F581977FB1D91 /* Pods_GiphySearch_GiphySearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearch_GiphySearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		327AE510240030F17A747323 /* Pods-GiphySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearch.release.xcconfig"; path = "Target Support Files/Pods-GiphySearch/Pods-GiphySearch.release.xcconfig"; sourceTree = "<group>"; };
+		629DF067256BB7920008E580 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		629DF076256BB7A40008E580 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
+		629DF07B256BB8A10008E580 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		629DF080256BB8AB0008E580 /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
 		62C6521125691DB600A3D54A /* GiphySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C6521425691DB600A3D54A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62C6521625691DB600A3D54A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,8 +158,8 @@
 		62C652DD256957D400A3D54A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		62C652ED256957D400A3D54A /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		62C6530A2569586F00A3D54A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		62C6530F2569592200A3D54A /* FavoritesImages+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesImages+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		62C653102569592200A3D54A /* FavoritesImages+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesImages+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		62C6530F2569592200A3D54A /* FavoritesImages+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoritesImages+CoreDataClass.swift"; path = "GiphySearch/CoreData/FavoritesImages+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		62C653102569592200A3D54A /* FavoritesImages+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoritesImages+CoreDataProperties.swift"; path = "GiphySearch/CoreData/FavoritesImages+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		62C6531D25695B0100A3D54A /* CoreDataStackProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackProvider.swift; sourceTree = "<group>"; };
 		62C6532225695CFD00A3D54A /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
 		62C6532725695D7300A3D54A /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
@@ -203,6 +211,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		629DF066256BB77E0008E580 /* FavoritesView */ = {
+			isa = PBXGroup;
+			children = (
+				629DF085256BB8B00008E580 /* Model */,
+				629DF086256BB8B70008E580 /* ViewModel */,
+				629DF067256BB7920008E580 /* FavoritesViewController.swift */,
+				629DF076256BB7A40008E580 /* FavoritesCollectionViewCell.swift */,
+			);
+			path = FavoritesView;
+			sourceTree = "<group>";
+		};
+		629DF085256BB8B00008E580 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				629DF080256BB8AB0008E580 /* FavoritesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		629DF086256BB8B70008E580 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				629DF07B256BB8A10008E580 /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		62C6520825691DB600A3D54A = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +263,7 @@
 		62C6521325691DB600A3D54A /* GiphySearch */ = {
 			isa = PBXGroup;
 			children = (
+				629DF066256BB77E0008E580 /* FavoritesView */,
 				62C6534D2569785400A3D54A /* SearchView */,
 				62C652D5256957D400A3D54A /* CoreData */,
 				62C652EC256957D400A3D54A /* Request */,
@@ -633,6 +669,7 @@
 				62C653112569592200A3D54A /* FavoritesImages+CoreDataClass.swift in Sources */,
 				62C652AF2569348C00A3D54A /* W480_still.swift in Sources */,
 				62C6521525691DB600A3D54A /* AppDelegate.swift in Sources */,
+				629DF07C256BB8A10008E580 /* FavoritesViewModel.swift in Sources */,
 				62C652B72569348C00A3D54A /* Preview.swift in Sources */,
 				62C652AB2569348C00A3D54A /* Fixed_width_small_still.swift in Sources */,
 				62C65344256976A300A3D54A /* ImagesViewControllerDelegate.swift in Sources */,
@@ -643,6 +680,7 @@
 				62C652AD2569348C00A3D54A /* Fixed_width_small.swift in Sources */,
 				62C652BD2569348C00A3D54A /* Fixed_width.swift in Sources */,
 				62C652F1256957D400A3D54A /* CoreDataStorage.xcdatamodeld in Sources */,
+				629DF068256BB7920008E580 /* FavoritesViewController.swift in Sources */,
 				62C652F2256957D500A3D54A /* CoreDataModel.swift in Sources */,
 				62C652D12569376600A3D54A /* Constants.swift in Sources */,
 				62C652B62569348C00A3D54A /* Fixed_height_downsampled.swift in Sources */,
@@ -654,8 +692,10 @@
 				62C652F3256957D500A3D54A /* CoreDataStorage.swift in Sources */,
 				62C653122569592200A3D54A /* FavoritesImages+CoreDataProperties.swift in Sources */,
 				62C652C42569348C00A3D54A /* Fixed_height_small.swift in Sources */,
+				629DF081256BB8AB0008E580 /* FavoritesModel.swift in Sources */,
 				62C652A62569348C00A3D54A /* Downsized_still.swift in Sources */,
 				62C652C32569348C00A3D54A /* Analytics.swift in Sources */,
+				629DF077256BB7A40008E580 /* FavoritesCollectionViewCell.swift in Sources */,
 				62C652BA2569348C00A3D54A /* Onclick.swift in Sources */,
 				62C652A92569348C00A3D54A /* Onsent.swift in Sources */,
 				62C652C02569348C00A3D54A /* Downsized_large.swift in Sources */,

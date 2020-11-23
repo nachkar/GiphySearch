@@ -26,7 +26,7 @@ class ImagesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    var imageCellViewModel: ImagesCellViewModel? {
+    var imageCellViewModel: ImagesCellViewModelItem? {
          didSet {
             imageAnimated.sd_setImage(with: URL.init(string: imageCellViewModel?.imageUrl ?? ""), completed: {_, _, _, _ in })
             titleLbl.text = imageCellViewModel?.imageTitle ?? ""

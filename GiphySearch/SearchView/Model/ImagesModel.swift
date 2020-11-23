@@ -8,7 +8,7 @@
 import Foundation
 
 class ImagesModel: NSObject {
-    
+
     typealias CompletionHandler = (_ success: Bool, _ message: String, _ result: [DataItem]) -> Void
     func getTrendings(completionHandler : @escaping CompletionHandler) {
 
