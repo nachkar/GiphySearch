@@ -16,4 +16,8 @@ extension ImagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        CoreDataManager.sharedManager.insertFavorite(imageModel: viewModel.items[indexPath.row])
+    }
 }

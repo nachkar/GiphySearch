@@ -45,7 +45,7 @@ class FavoritesViewController: BaseViewController {
 
 extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath as IndexPath) as! FavoritesCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesCell", for: indexPath as IndexPath) as! FavoritesCollectionViewCell
         cell.favoritesCollectionViewCellViewModel = viewModel.items[indexPath.row]
         cell.delegate = self
 
