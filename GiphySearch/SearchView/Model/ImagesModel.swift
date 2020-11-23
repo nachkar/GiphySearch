@@ -38,6 +38,34 @@ class ImagesModel: NSObject {
         })
     }
     
+    typealias SearchHandler = (_ success: Bool, _ message: String, _ result: [DataItem]) -> Void
+    func searchImages(text: String,completionHandler : @escaping SearchHandler) {
+        //HttpRequest
+        let urlString = "\(ServerAddress.BaseUrl)\(ServerAddress.SearchApi)&q=\(text)"
+        
+        let httpRequest = HTTPRequest.init()
+        httpRequest.GET(requestUrl: urlString, success: { (response: Any)  in
+            if response is NSDictionary {
+                print("Giphy Images "+"\(response)")
+                
+                let result = GiphyResponse.init(json: response as? Dictionary)
+                if result != nil {
+                    if result?.meta.status == 200 {
+                        completionHandler(true, result?.meta.msg ?? "", result!.data)
+                    } else {
+                        completionHandler(false, result?.meta.msg ?? "Constants.Values.ErrorText", [])
+                    }
+                } else {
+                    completionHandler(false, result?.meta.msg ?? "Constants.Values.ErrorText", [])
+                }
+            } else {
+                completionHandler(false, "Constants.Values.ErrorText", [])
+            }
+        }, failure: {() in
+            completionHandler(false, "Constants.Values.ErrorText", [])
+        })
+    }
+    
     func updateImageState(image: ImagesCellViewModelItem) {
         if image.isFavorite {
             CoreDataManager.sharedManager.removeImage(imageId: image.imageId)

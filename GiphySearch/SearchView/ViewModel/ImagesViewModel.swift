@@ -32,6 +32,25 @@ class ImagesViewModel: NSObject {
         })
     }
     
+    func filterData(text: String) {
+        self.isLoading = true
+
+        imagesModel.searchImages(text: text, completionHandler: { [weak self] success, message, result in
+            self?.isLoading = false
+
+            if success {
+                self?.processFetchedData(data: result)
+                self?.success = message
+            } else {
+                self?.error = message
+            }
+        })
+    }
+
+    func cancelFilter() {
+        self.processFetchedData(data: self.dataArray!)
+    }
+    
     func updateImageState(image: ImagesCellViewModelItem) {
         imagesModel.updateImageState(image: image)
     }

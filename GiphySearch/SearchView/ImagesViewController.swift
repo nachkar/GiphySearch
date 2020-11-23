@@ -9,10 +9,14 @@ import UIKit
 
 class ImagesViewController: BaseViewController {
 
-    let viewModel = ImagesViewModel()
-
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.tableFooterView = UIView()
+        }
+    }
+    
+    let viewModel = ImagesViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,25 +24,18 @@ class ImagesViewController: BaseViewController {
         // Do any additional setup after loading the view.
         setupSearchBar()
         setupViewModel()
-        setupTableView()
-    }
-
-    func setupTableView() {
-        self.tableView.tableFooterView = UIView()
     }
 
     func setupSearchBar() {
         let search = UISearchController(searchResultsController: nil)
         search.hidesNavigationBarDuringPresentation = false
-//        search.searchResultsUpdater = self
+        search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Search giphy..."
-//        search.searchBar.delegate = self
+        search.searchBar.delegate = self
         search.searchBar.isTranslucent = false
         navigationItem.searchController = search
         navigationItem.hidesSearchBarWhenScrolling = false
-        search.searchBar.barTintColor = .white
-        search.searchBar.barStyle = .default
 
         if #available(iOS 13.0, *) {
             search.searchBar.searchTextField.backgroundColor = .white
@@ -81,5 +78,35 @@ class ImagesViewController: BaseViewController {
 extension ImagesViewController: ImagesCellDelegate {
     func updateImageState(image: ImagesCellViewModelItem) {
         viewModel.updateImageState(image: image)
+    }
+}
+
+extension ImagesViewController: UISearchResultsUpdating, UISearchBarDelegate {
+
+    func updateSearchResults(for searchController: UISearchController) {
+
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+
+        let text = searchController.searchBar.text ?? ""
+        if text.isStringNull()  {
+            viewModel.cancelFilter()
+            return
+        }
+
+        perform(#selector(searchText(text:)), with: searchController.searchBar.text!, afterDelay: 0.4)
+    }
+
+    @objc func searchText(text: String) {
+        self.viewModel.filterData(text: text)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // Stop doing the search stuff
+        // and clear the text in the search bar
+        //        searchBar.text = ""
+        // Hide the cancel button
+        searchBar.showsCancelButton = false
+        // You could also change the position, frame etc of the searchBar
+        self.tableView.scrollsToTop = true
     }
 }
