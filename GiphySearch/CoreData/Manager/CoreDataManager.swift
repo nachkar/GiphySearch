@@ -20,9 +20,18 @@ private let shared = CoreDataManager()
         })
     }
     
-    func insertFavorite(imageModel : ImagesCellViewModelItem) {
+    func insertFavorite(imageModel: ImagesCellViewModelItem) {
         self.scheduleBlock(block: {context in
             _ = FavoritesImages.insertImage(imageModel, in: context)
         })
+    }
+    
+    func getImage(imageId: String) -> FavoritesImages? {
+        var image: FavoritesImages?
+        self.fetchBlock(block: { context in
+            image = FavoritesImages.getImage(imageId: imageId, inMoc: context)
+        })
+        
+        return image
     }
 }

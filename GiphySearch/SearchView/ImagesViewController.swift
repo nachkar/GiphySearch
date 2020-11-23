@@ -77,3 +77,9 @@ class ImagesViewController: BaseViewController {
     */
 
 }
+
+extension ImagesViewController: ImagesCellDelegate {
+    func updateImageState(image: ImagesCellViewModelItem) {
+        viewModel.updateImageState(image: image)
+    }
+}

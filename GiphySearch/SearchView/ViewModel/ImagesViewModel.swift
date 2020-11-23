@@ -31,6 +31,10 @@ class ImagesViewModel: NSObject {
             }
         })
     }
+    
+    func updateImageState(image: ImagesCellViewModelItem) {
+        imagesModel.updateImageState(image: image)
+    }
 
     var finishedLoading: Bool = false {
         didSet { self.didFinishLoading?() }
@@ -56,7 +60,7 @@ class ImagesViewModel: NSObject {
     }
 
     func createCellViewModel(item: DataItem) -> ImagesCellViewModelItem {
-        return ImagesCellViewModelItem(imageId: item.id, imageUrl: item.images.fixed_width_small.url, imageTitle: item.title, imageRating: item.rating, imageSource: item.source_tld, isFavorite: false)
+        return ImagesCellViewModelItem(imageId: item.id, imageUrl: item.images.fixed_width_small.url, imageTitle: item.title, imageRating: item.rating, imageSource: item.source_tld, isFavorite: imagesModel.getIsFavorite(imageId: item.id))
         }
 
     func processFetchedData(data: [DataItem]) {
@@ -75,11 +79,20 @@ class ImagesViewModel: NSObject {
     var showAlertClosure: (() -> Void)?
 }
 
-struct ImagesCellViewModelItem {
+class ImagesCellViewModelItem: NSObject {
     var imageId: String
     var imageUrl: String
     var imageTitle: String
     var imageRating: String
     var imageSource: String
     var isFavorite: Bool
+    
+    init(imageId: String,imageUrl: String,imageTitle: String,imageRating: String,imageSource: String,isFavorite: Bool) {
+        self.imageId = imageId
+        self.imageUrl = imageUrl
+        self.imageTitle = imageTitle
+        self.imageRating = imageRating
+        self.imageSource = imageSource
+        self.isFavorite = isFavorite
+    }
 }

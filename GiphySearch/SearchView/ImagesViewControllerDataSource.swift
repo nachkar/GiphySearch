@@ -14,6 +14,7 @@ extension ImagesViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         cell.backgroundColor = .white
 
+        cell.delegate = self
         cell.imageCellViewModel = viewModel.items[indexPath.row]
 
         return cell
