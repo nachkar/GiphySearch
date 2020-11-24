@@ -1,8 +1,8 @@
 //
 //  CoreDataStack.swift
-//  GiphySearch
+//  nhkr
 //
-//  Created by Noel Achkar on 21/11/2020.
+//  Created by Noel Achkar on 18/05/2020.
 //
 
 import CoreData

@@ -1,9 +1,8 @@
 //
 //  CoreDataStackProvider.swift
-//  AlAreesh
+//  GiphySearch
 //
-//  Created by Noel Achkar on 8/27/20.
-//  Copyright © 2020 Noel Achkar. All rights reserved.
+//  Created by Noel Achkar on 23/11/2020.
 //
 
 import CoreData

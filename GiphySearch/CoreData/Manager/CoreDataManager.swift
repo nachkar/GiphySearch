@@ -19,19 +19,19 @@ private let shared = CoreDataManager()
             FavoritesImages.removeImage(imageId, in: context)
         })
     }
-    
+
     func insertFavorite(imageModel: ImagesCellViewModelItem) {
-        self.scheduleBlock(block: {context in
+        self.executeBlock(block: { context in
             _ = FavoritesImages.insertImage(imageModel, in: context)
         })
     }
-    
+
     func getImage(imageId: String) -> FavoritesImages? {
         var image: FavoritesImages?
         self.fetchBlock(block: { context in
             image = FavoritesImages.getImage(imageId: imageId, inMoc: context)
         })
-        
+
         return image
     }
 }

@@ -1,8 +1,8 @@
 //
 //  CoreDataStorage.swift
-//  GiphySearch
+//  nhkr
 //
-//  Created by Noel Achkar on 21/11/2020.
+//  Created by Noel Achkar on 18/05/2020.
 //
 
 import Foundation
@@ -41,7 +41,7 @@ class CoreDataStorage: NSObject {
     }
 
     func fetchBlock(block: @escaping (_ context: NSManagedObjectContext) -> Void) {
-        let mainContext = self.mainManagedObjectContext
+        let mainContext = self.stack.childContext(concurrencyType: .privateQueueConcurrencyType)
         mainContext.performAndWait {
             block(mainContext)
         }

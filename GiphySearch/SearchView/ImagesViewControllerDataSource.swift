@@ -12,8 +12,6 @@ extension ImagesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImagesCell", for: indexPath) as! ImagesTableViewCell
         cell.selectionStyle = .none
-        cell.backgroundColor = .white
-
         cell.delegate = self
         cell.imageCellViewModel = viewModel.items[indexPath.row]
 

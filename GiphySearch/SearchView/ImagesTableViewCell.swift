@@ -32,14 +32,14 @@ class ImagesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     @IBAction func updateImageState() {
         guard let delegate = self.delegate else {
             return
         }
 
         delegate.updateImageState(image: imageCellViewModel!)
-        
+
         let isFavorite = imageCellViewModel!.isFavorite
         imageCellViewModel?.isFavorite = isFavorite ? false : true
 
@@ -52,7 +52,7 @@ class ImagesTableViewCell: UITableViewCell {
             imageAnimated.sd_setImage(with: URL.init(string: imageCellViewModel?.imageUrl ?? ""), completed: {_, _, _, _ in })
             titleLbl.text = imageCellViewModel?.imageTitle ?? ""
             detailLbl.text = imageCellViewModel?.imageSource ?? ""
-            
+
             let image = imageCellViewModel!.isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
             favBtn.setImage(image, for: .normal)
          }

@@ -10,12 +10,9 @@ import UIKit
 class ImagesViewController: BaseViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var tableView: UITableView! {
-        didSet {
-            tableView.tableFooterView = UIView()
-        }
-    }
-    
+    @IBOutlet weak var loadMoreIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var tableView: UITableView!
+
     let viewModel = ImagesViewModel()
 
     override func viewDidLoad() {
@@ -48,6 +45,7 @@ class ImagesViewController: BaseViewController {
 
     func setupViewModel() {
         viewModel.didFinishLoading = { [weak self] in
+            self?.loadMoreIndicator.stopAnimating()
             self?.tableView.reloadData()
         }
 
@@ -56,13 +54,15 @@ class ImagesViewController: BaseViewController {
         }
 
         viewModel.updateLoadingStatus = { [weak self] isLoading in
-            self?.activityIndicator.isHidden = !isLoading
             isLoading ? self?.activityIndicator.startAnimating() : self?.activityIndicator.stopAnimating()
         }
 
         viewModel.initialise()
     }
 
+    func reloadDataFav(imageId: String) {
+        viewModel.reloadFavData(imageId: imageId)
+    }
     /*
     // MARK: - Navigation
 
@@ -88,7 +88,7 @@ extension ImagesViewController: UISearchResultsUpdating, UISearchBarDelegate {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
 
         let text = searchController.searchBar.text ?? ""
-        if text.isStringNull()  {
+        if text.isStringNull() {
             viewModel.cancelFilter()
             return
         }
@@ -97,7 +97,7 @@ extension ImagesViewController: UISearchResultsUpdating, UISearchBarDelegate {
     }
 
     @objc func searchText(text: String) {
-        self.viewModel.filterData(text: text)
+        self.viewModel.filterData(text: text, isLoadMore: false)
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -107,6 +107,17 @@ extension ImagesViewController: UISearchResultsUpdating, UISearchBarDelegate {
         // Hide the cancel button
         searchBar.showsCancelButton = false
         // You could also change the position, frame etc of the searchBar
-        self.tableView.scrollsToTop = true
+        self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.becomeFirstResponder()
+        searchBar.showsCancelButton = true
+
+        self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
     }
 }

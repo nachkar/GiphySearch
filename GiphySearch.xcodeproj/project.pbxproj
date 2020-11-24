@@ -71,6 +71,8 @@
 		62C6532825695D7300A3D54A /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C6532725695D7300A3D54A /* ImagesModel.swift */; };
 		62C65344256976A300A3D54A /* ImagesViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C65343256976A300A3D54A /* ImagesViewControllerDelegate.swift */; };
 		62C653492569771100A3D54A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C653482569771100A3D54A /* BaseViewController.swift */; };
+		62D56AB8256C0C9E00F222C2 /* FavoritesViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D56AB7256C0C9E00F222C2 /* FavoritesViewControllerDataSource.swift */; };
+		62D56ABD256C0CAD00F222C2 /* FavoritesViewControllerFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D56ABC256C0CAD00F222C2 /* FavoritesViewControllerFlowLayout.swift */; };
 		93E2D7566D818F2979A10CAF /* Pods_GiphySearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B526D501156AF79E8ACC55CB /* Pods_GiphySearchTests.framework */; };
 		CC76404731567BB102EF51B3 /* Pods_GiphySearch_GiphySearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E24D5DF273F581977FB1D91 /* Pods_GiphySearch_GiphySearchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -165,6 +167,8 @@
 		62C6532725695D7300A3D54A /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
 		62C65343256976A300A3D54A /* ImagesViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewControllerDelegate.swift; sourceTree = "<group>"; };
 		62C653482569771100A3D54A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		62D56AB7256C0C9E00F222C2 /* FavoritesViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerDataSource.swift; sourceTree = "<group>"; };
+		62D56ABC256C0CAD00F222C2 /* FavoritesViewControllerFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerFlowLayout.swift; sourceTree = "<group>"; };
 		7434BC29540ADA5292D64AC2 /* Pods-GiphySearch-GiphySearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearch-GiphySearchUITests.release.xcconfig"; path = "Target Support Files/Pods-GiphySearch-GiphySearchUITests/Pods-GiphySearch-GiphySearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		74C1CE5D78C1169891D38FA6 /* Pods-GiphySearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearchTests.release.xcconfig"; path = "Target Support Files/Pods-GiphySearchTests/Pods-GiphySearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B161BC0098645C398375291 /* Pods-GiphySearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearchTests.debug.xcconfig"; path = "Target Support Files/Pods-GiphySearchTests/Pods-GiphySearchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				629DF085256BB8B00008E580 /* Model */,
 				629DF086256BB8B70008E580 /* ViewModel */,
 				629DF067256BB7920008E580 /* FavoritesViewController.swift */,
+				62D56AB7256C0C9E00F222C2 /* FavoritesViewControllerDataSource.swift */,
+				62D56ABC256C0CAD00F222C2 /* FavoritesViewControllerFlowLayout.swift */,
 				629DF076256BB7A40008E580 /* FavoritesCollectionViewCell.swift */,
 			);
 			path = FavoritesView;
@@ -656,6 +662,7 @@
 				62C65303256957D500A3D54A /* HTTPRequest.swift in Sources */,
 				62C652A72569348C00A3D54A /* JSONCompatible.swift in Sources */,
 				62C6527B2569303900A3D54A /* ImagesViewController.swift in Sources */,
+				62D56AB8256C0C9E00F222C2 /* FavoritesViewControllerDataSource.swift in Sources */,
 				62C653492569771100A3D54A /* BaseViewController.swift in Sources */,
 				62C652B22569348C00A3D54A /* Fixed_height_still.swift in Sources */,
 				62C6530B2569586F00A3D54A /* Utilities.swift in Sources */,
@@ -683,6 +690,7 @@
 				629DF068256BB7920008E580 /* FavoritesViewController.swift in Sources */,
 				62C652F2256957D500A3D54A /* CoreDataModel.swift in Sources */,
 				62C652D12569376600A3D54A /* Constants.swift in Sources */,
+				62D56ABD256C0CAD00F222C2 /* FavoritesViewControllerFlowLayout.swift in Sources */,
 				62C652B62569348C00A3D54A /* Fixed_height_downsampled.swift in Sources */,
 				62C652AA2569348C00A3D54A /* Original_mp4.swift in Sources */,
 				62C652EF256957D400A3D54A /* CoreDataManager.swift in Sources */,
@@ -887,6 +895,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GiphySearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -906,6 +915,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GiphySearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

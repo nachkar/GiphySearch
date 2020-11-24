@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="moY-Ve-CC2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,7 +26,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwG-92-eZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1414" y="187"/>
+            <point key="canvasLocation" x="-1429" y="236"/>
         </scene>
         <!--Search-->
         <scene sceneID="w8K-af-Ez3">
@@ -38,6 +39,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-hs-9JK">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="BVH-W8-HMJ">
+                                    <rect key="frame" x="0.0" y="196" width="414" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ffp-ii-5B3">
+                                            <rect key="frame" x="197" y="25" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="ffp-ii-5B3" firstAttribute="centerX" secondItem="BVH-W8-HMJ" secondAttribute="centerX" id="RBS-o9-j8z"/>
+                                        <constraint firstItem="ffp-ii-5B3" firstAttribute="centerY" secondItem="BVH-W8-HMJ" secondAttribute="centerY" id="c0r-kf-Vat"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesCell" rowHeight="140" id="l2I-TC-E38" customClass="ImagesTableViewCell" customModule="GiphySearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
@@ -60,7 +75,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvP-Hb-1ep">
                                                     <rect key="frame" x="130" y="70" width="264" height="50"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -105,7 +120,7 @@
                                     <outlet property="delegate" destination="MPh-WT-65M" id="N8s-C5-b4w"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="895-Ep-X4J">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="895-Ep-X4J">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -123,12 +138,13 @@
                     <navigationItem key="navigationItem" title="Search" id="khQ-Xu-bZs"/>
                     <connections>
                         <outlet property="activityIndicator" destination="895-Ep-X4J" id="d1J-nH-aTJ"/>
+                        <outlet property="loadMoreIndicator" destination="ffp-ii-5B3" id="rHU-Kz-tVO"/>
                         <outlet property="tableView" destination="JxB-hs-9JK" id="jI6-z7-s01"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJs-rI-L2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="-82"/>
+            <point key="canvasLocation" x="257.97101449275362" y="-82.366071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="633-Ua-Jig">
@@ -145,7 +161,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9f-D1-AJh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500" y="572"/>
+            <point key="canvasLocation" x="-530" y="572"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="Ret-Ti-kjC">
@@ -155,12 +171,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OSa-Ag-GRt">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OSa-Ag-GRt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="250" constant="500" id="Lbc-WW-IRM"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="rAW-4j-q2Q">
                                     <size key="itemSize" width="200" height="220"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -186,7 +199,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-f2-Cbz">
                                                     <rect key="frame" x="10" y="160" width="180" height="40"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -239,8 +252,8 @@
                         <constraints>
                             <constraint firstItem="D8W-3p-etR" firstAttribute="bottom" secondItem="OSa-Ag-GRt" secondAttribute="bottom" id="VBu-Te-cYe"/>
                             <constraint firstItem="OSa-Ag-GRt" firstAttribute="leading" secondItem="D8W-3p-etR" secondAttribute="leading" id="cHY-Vo-dr4"/>
-                            <constraint firstAttribute="trailing" secondItem="OSa-Ag-GRt" secondAttribute="trailing" id="hmz-wt-bRg"/>
                             <constraint firstItem="OSa-Ag-GRt" firstAttribute="top" secondItem="D8W-3p-etR" secondAttribute="top" id="mHi-A1-fER"/>
+                            <constraint firstItem="D8W-3p-etR" firstAttribute="trailing" secondItem="OSa-Ag-GRt" secondAttribute="trailing" id="nyS-E6-5eo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="D7r-Xn-mzz"/>
@@ -250,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIp-PE-D6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="572"/>
+            <point key="canvasLocation" x="257.97101449275362" y="571.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AMS-gf-0fn">

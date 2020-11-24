@@ -43,32 +43,15 @@ class FavoritesViewController: BaseViewController {
     */
 }
 
-extension FavoritesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritesCell", for: indexPath as IndexPath) as! FavoritesCollectionViewCell
-        cell.favoritesCollectionViewCellViewModel = viewModel.items[indexPath.row]
-        cell.delegate = self
-
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.itemCount
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.view.frame.size.width/2)-25, height: (self.view.frame.size.width/2)-25)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
-    }
-}
-
 extension FavoritesViewController: FavoritesDelegate {
     func removeFavorite(imageId: String) {
         viewModel.removeFavorite(imageId: imageId)
+
+        //Reload Favorites in SearchView
+        if let navigation = self.tabBarController?.viewControllers![0] as? UINavigationController {
+            if let controller = navigation.viewControllers[0] as? ImagesViewController {
+                controller.reloadDataFav(imageId: imageId)
+            }
+        }
     }
 }
